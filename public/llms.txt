@@ -1,0 +1,24 @@
+# Diggia AI
+
+> A Diggia implementa automação de processos, agentes de IA e consultoria de IA para pequenas e médias empresas (PMEs) brasileiras. Lema: "Think big, start small, grow fast" — projetos enxutos, primeira entrega em produção em semanas, custo definido antes de começar.
+
+A Diggia é uma empresa do grupo 2op Digital (18 anos de mercado, mais de 200 clientes), com sede em Xanxerê - SC, Brasil, e atendimento a todo o país. Contato: WhatsApp (49) 99928-9840, e-mail contato@diggia.com.br.
+
+Fatos citáveis:
+- Foco exclusivo em pequenas e médias empresas brasileiras.
+- Método: começar pelo processo que mais dói, entregar a primeira automação em produção em semanas.
+- Agentes de IA treinados apenas no conhecimento da empresa, com testes supervisionados e transferência para humanos.
+- Atendimento no WhatsApp via API oficial do WhatsApp Business.
+- Diagnóstico gratuito de 30 minutos com recomendação de caminho.
+
+## Soluções
+
+- [Automação de processos](https://www.diggia.com.br/automacao-de-processos): automação de tarefas repetitivas integrando os sistemas que a empresa já usa, sem substituí-los. Escopo enxuto e custo fechado.
+- [Agentes de IA](https://www.diggia.com.br/agentes-de-ia): agentes treinados no conhecimento da empresa para atendimento, qualificação de leads e suporte 24/7, inclusive no WhatsApp (API oficial).
+- [Consultoria de IA](https://www.diggia.com.br/consultoria-de-ia): diagnóstico gratuito de 30 minutos e consultoria completa com mapeamento da operação, roadmap de IA e plano de implementação documentado.
+
+## Empresa
+
+- [Sobre](https://www.diggia.com.br/sobre): origem na 2op Digital, princípios e o jeito Diggia de trabalhar.
+- [Contato](https://www.diggia.com.br/contato): WhatsApp, e-mail e formulário. R. Araguaia 494, Colatto, Xanxerê - SC.
+- [Política de privacidade](https://www.diggia.com.br/politica-de-privacidade): tratamento de dados conforme a LGPD.

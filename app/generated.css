@@ -1,0 +1,24 @@
+@keyframes dgflow-index{to{stroke-dashoffset:-26}}
+@keyframes dgpulse-index{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes dgring-index{0%{r:8;opacity:.7}100%{r:22;opacity:0}}
+@media (prefers-reduced-motion:reduce){.dg-anim *{animation:none!important}}
+
+@keyframes dgchat-agentesdeia{0%{opacity:0;transform:translateY(10px)}4%{opacity:1;transform:translateY(0)}88%{opacity:1;transform:translateY(0)}94%,100%{opacity:0;transform:translateY(0)}}
+@keyframes dgpulse-agentesdeia{0%,100%{opacity:.55}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.dg-anim *{animation:none!important}}
+
+@keyframes dgflow-automacaodeprocessos{to{stroke-dashoffset:-26}}
+@keyframes dgspin-automacaodeprocessos{to{transform:rotate(360deg)}}
+@keyframes dgring-automacaodeprocessos{0%{r:38;opacity:.6}100%{r:52;opacity:0}}
+@keyframes dgpulse-automacaodeprocessos{0%,100%{opacity:.55}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.dg-anim *{animation:none!important}}
+
+@keyframes dgspin-consultoriadeia{to{transform:rotate(360deg)}}
+@keyframes dgring-consultoriadeia{0%{r:7;opacity:.8}100%{r:24;opacity:0}}
+@media (prefers-reduced-motion:reduce){.dg-anim *{animation:none!important}}
+
+.dg-h1:hover { background:#5a71ff;color:#fff; }
+.dg-h2:hover { border-color:rgba(255,255,255,.55);color:#fff; }
+.dg-h3:hover { border-color:rgba(70,95,255,.55);color:#fff; }
+.dg-h4:hover { background:#5a71ff; }
+.dg-h5:hover { color:#fff; }
