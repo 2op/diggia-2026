@@ -1,0 +1,238 @@
+/* ============================================================================
+   Interações (hover/focus) e animações de entrada.
+   Carregado DEPOIS de generated.css para poder sobrescrever os :hover gerados.
+   Muitos elementos vêm do conversor com style inline, por isso alguns valores
+   precisam de !important — inline style vence qualquer folha de estilo.
+
+   As animações vêm primeiro de propósito: `[data-rv].dg-in` e `.dg-h3:hover`
+   têm a mesma especificidade, e o hover precisa ganhar enquanto um bloco ainda
+   estiver terminando de entrar.
+   ========================================================================== */
+
+/* ============================================================================
+   Animações de entrada (scroll reveal) — inspiradas na referência.
+   data-rv    = bloco que sobe e aparece
+   data-rv-h  = título que entra caractere a caractere
+   Ambos são aplicados por lib/reveal-script.ts. Sem JS nada é escondido, então
+   o conteúdo continua visível e acessível.
+   ========================================================================== */
+
+[data-rv] {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: none;
+  will-change: opacity, transform;
+}
+[data-rv].dg-in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: var(--dg-d, 0ms);
+}
+
+/* Cascata dos blocos que entram juntos. Vem por classe, e não por style inline,
+   para não re-serializar o atributo style (ver lib/reveal-script.ts). */
+.dg-d1 { --dg-d: 80ms; }
+.dg-d2 { --dg-d: 160ms; }
+.dg-d3 { --dg-d: 240ms; }
+.dg-d4 { --dg-d: 320ms; }
+.dg-d5 { --dg-d: 400ms; }
+.dg-d6 { --dg-d: 480ms; }
+
+/* --- títulos: revelação caractere a caractere --- */
+[data-rv-h] {
+  opacity: 0;
+}
+[data-rv-h].dg-in,
+[data-rv-h].dg-done {
+  opacity: 1;
+}
+.dg-w {
+  display: inline-block;
+  white-space: nowrap;
+}
+.dg-c {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(12px);
+  will-change: opacity, transform, filter;
+}
+[data-rv-h].dg-in .dg-c {
+  animation: dg-char 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: calc(var(--dg-d, 0ms) + var(--i, 0) * 20ms);
+}
+[data-rv-h].dg-done .dg-c {
+  animation: none;
+  opacity: 1;
+  transform: none;
+  filter: none;
+  will-change: auto;
+}
+@keyframes dg-char {
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+/* texto acessível equivalente ao título dividido em spans */
+.dg-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-rv],
+  [data-rv-h],
+  .dg-c {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------------------------------------------------------------- transições */
+a,
+button,
+summary,
+summary > span {
+  transition:
+    color 0.22s ease,
+    background-color 0.22s ease,
+    background 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease,
+    opacity 0.22s ease;
+}
+input,
+textarea {
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+:where(a, button, summary, input, textarea):focus-visible {
+  outline: 2px solid #8b9bff;
+  outline-offset: 3px;
+}
+
+/* ------------------------------------------- botão primário (.dg-h1 / .dg-h4) */
+.dg-h1:hover,
+.dg-h1:focus-visible,
+.dg-h4:hover,
+.dg-h4:focus-visible {
+  background: #5a71ff !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(70, 95, 255, 0.85);
+}
+.dg-h1:active,
+.dg-h4:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px -6px rgba(70, 95, 255, 0.7);
+}
+
+/* ------------------------------------------------ botão secundário (.dg-h2) */
+.dg-h2:hover,
+.dg-h2:focus-visible {
+  border-color: rgba(255, 255, 255, 0.55) !important;
+  background: rgba(255, 255, 255, 0.09) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+.dg-h2:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------- cards clicáveis (.dg-h3) */
+.dg-h3:hover,
+.dg-h3:focus-visible {
+  border-color: rgba(70, 95, 255, 0.55) !important;
+  background: linear-gradient(180deg, rgba(70, 95, 255, 0.1), rgba(255, 255, 255, 0.012)) !important;
+  color: #fff !important;
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px -26px rgba(70, 95, 255, 0.9);
+}
+.dg-h3:active {
+  transform: translateY(-1px);
+}
+/* "Ver como funciona →" — a seta avança no hover */
+.dg-h3 > div:last-child {
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+.dg-h3:hover > div:last-child,
+.dg-h3:focus-visible > div:last-child {
+  transform: translateX(6px);
+  color: #b3bdff !important;
+}
+/* ícone do card */
+.dg-h3 > div:first-child {
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+.dg-h3:hover > div:first-child {
+  border-color: rgba(70, 95, 255, 0.5) !important;
+  background: rgba(70, 95, 255, 0.2) !important;
+}
+
+/* -------------------------------------------------- links de texto (.dg-h5) */
+.dg-h5:hover,
+.dg-h5:focus-visible {
+  color: #fff !important;
+}
+
+/* ----------------------------------- links inline dentro do conteúdo/rodapé */
+main a[href]:not(.dg-h1):not(.dg-h2):not(.dg-h3):not(.dg-h5):hover,
+main a[href]:not(.dg-h1):not(.dg-h2):not(.dg-h3):not(.dg-h5):focus-visible,
+footer a[href]:not(.dg-h5):hover,
+footer a[href]:not(.dg-h5):focus-visible {
+  color: #b3bdff !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* --------------------------------------------------------------- FAQ (details) */
+details:hover {
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+details[open] {
+  border-color: rgba(70, 95, 255, 0.35) !important;
+}
+summary:hover {
+  color: #fff;
+}
+summary:hover > span {
+  color: #b3bdff !important;
+}
+details[open] summary > span {
+  transform: rotate(45deg);
+}
+
+/* ------------------------------------------------------------------ formulário */
+input:hover,
+textarea:hover {
+  border-color: rgba(255, 255, 255, 0.28) !important;
+}
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(70, 95, 255, 0.22);
+}

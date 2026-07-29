@@ -12,13 +12,13 @@ export default function PageContent() {
             Consultoria de IA
           </div>
           <h1 style={{ fontFamily: "Manrope,sans-serif", fontWeight: "400", fontSize: "56px", lineHeight: "1.15", letterSpacing: "-.02em", margin: "26px 0 0", textWrap: "balance" }}>
-            Consultoria de IA: descubra por onde começar — antes de gastar
+            Consultoria de IA: descubra por onde começar antes de gastar
           </h1>
           <p style={{ fontSize: "16px", lineHeight: "1.7", color: "rgba(255,255,255,.65)", maxWidth: "660px", margin: "24px 0 0", textWrap: "pretty" }}>
             Todo mundo diz que sua empresa precisa de IA. Poucos dizem onde, quanto custa e o que vem primeiro. Nossa consultoria responde exatamente isso: um diagnóstico da sua operação, um roadmap priorizado por impacto e um plano com escopo e custo definidos.
           </p>
           <div style={{ display: "flex", gap: "16px", marginTop: "38px" }}>
-            <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20agendar%20o%20diagn%C3%B3stico%20gratuito%20da%20Diggia." style={{ background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "16px 32px", borderRadius: "100px" }}>
+            <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20agendar%20o%20diagn%C3%B3stico%20gratuito%20da%20Diggia." target="_blank" rel="noopener noreferrer" style={{ background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "16px 32px", borderRadius: "100px" }}>
               Começar pelo diagnóstico gratuito
             </a>
           </div>
@@ -156,7 +156,7 @@ export default function PageContent() {
               Mapa de oportunidades
             </div>
             <p style={{ margin: "12px 0 0", fontSize: "15.5px", lineHeight: "1.65", color: "rgba(255,255,255,.6)", textWrap: "pretty" }}>
-              As aplicações de IA e automação com maior retorno no seu contexto específico — não uma lista genérica.
+              As aplicações de IA e automação com maior retorno no seu contexto específico, não uma lista genérica.
             </p>
           </div>
           <div style={{ border: "1px solid rgba(255,255,255,.1)", borderRadius: "20px", padding: "36px 32px", background: "linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.008))" }}>
@@ -209,7 +209,7 @@ export default function PageContent() {
             "Qual é o maior resultado no menor tempo possível?"
           </div>
           <p style={{ fontSize: "16.5px", lineHeight: "1.75", color: "rgba(255,255,255,.65)", maxWidth: "640px", margin: "28px auto 0", textWrap: "pretty" }}>
-            Por isso não recomendamos transformações de 18 meses. Recomendamos o primeiro passo certo — aquele que se paga rápido e financia os próximos.
+            Por isso não recomendamos transformações de 18 meses. Recomendamos o primeiro passo certo: aquele que se paga rápido e financia os próximos.
           </p>
           <div className="dg-grid" style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr auto 1fr", gap: "16px", alignItems: "center", maxWidth: "720px", margin: "48px auto 0" }}>
             <div style={{ border: "1px solid rgba(255,255,255,.12)", borderRadius: "16px", padding: "22px 18px", background: "linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.006))" }}>
@@ -271,7 +271,7 @@ export default function PageContent() {
               </span>
             </summary>
             <p style={{ margin: "0", padding: "0 0 24px", fontSize: "15.5px", lineHeight: "1.65", color: "rgba(255,255,255,.6)", textWrap: "pretty" }}>
-              As duas coisas — mas o roadmap é seu. Se preferir implementar com outro parceiro ou time interno, o documento serve do mesmo jeito.
+              As duas coisas, mas o roadmap é seu. Se preferir implementar com outro parceiro ou time interno, o documento serve do mesmo jeito.
             </p>
           </details>
           <details style={{ border: "1px solid rgba(255,255,255,.1)", borderRadius: "16px", background: "linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.006))", padding: "0 28px" }}>
@@ -300,7 +300,7 @@ export default function PageContent() {
           Sem compromisso e sem apresentação de vendas: uma conversa de trabalho sobre a sua operação, com uma recomendação concreta no final.
         </p>
         <div style={{ marginTop: "38px" }}>
-          <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20agendar%20o%20diagn%C3%B3stico%20gratuito%20da%20Diggia." style={{ display: "inline-block", background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "17px 36px", borderRadius: "100px" }}>
+          <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20agendar%20o%20diagn%C3%B3stico%20gratuito%20da%20Diggia." target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "17px 36px", borderRadius: "100px" }}>
             Agendar diagnóstico gratuito
           </a>
         </div>

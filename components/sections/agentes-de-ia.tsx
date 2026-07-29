@@ -18,7 +18,7 @@ export default function PageContent() {
             Mais que um chatbot de respostas prontas: agentes que entendem seu negócio, atendem clientes no WhatsApp e no site, qualificam leads e executam tarefas dentro dos seus sistemas, 24 horas por dia, com supervisão humana onde importa.
           </p>
           <div style={{ display: "flex", gap: "16px", marginTop: "38px" }}>
-            <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Tenho%20interesse%20em%20agentes%20de%20IA%20para%20minha%20empresa." style={{ background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "16px 32px", borderRadius: "100px" }}>
+            <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Tenho%20interesse%20em%20agentes%20de%20IA%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" style={{ background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "16px 32px", borderRadius: "100px" }}>
               Quero um agente de IA
             </a>
           </div>
@@ -281,7 +281,7 @@ export default function PageContent() {
               </span>
             </summary>
             <p style={{ margin: "0", padding: "0 0 24px", fontSize: "15.5px", lineHeight: "1.65", color: "rgba(255,255,255,.6)", textWrap: "pretty" }}>
-              Esse é o risco número um de IA mal implementada — e o motivo de existir nossa etapa de testes supervisionados e limites de atuação. O agente responde só sobre o que foi treinado e transfere o resto para humanos.
+              Esse é o risco número um de IA mal implementada, e o motivo de existir nossa etapa de testes supervisionados e limites de atuação. O agente responde só sobre o que foi treinado e transfere o resto para humanos.
             </p>
           </details>
           <details style={{ border: "1px solid rgba(255,255,255,.1)", borderRadius: "16px", background: "linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.006))", padding: "0 28px" }}>
@@ -292,7 +292,7 @@ export default function PageContent() {
               </span>
             </summary>
             <p style={{ margin: "0", padding: "0 0 24px", fontSize: "15.5px", lineHeight: "1.65", color: "rgba(255,255,255,.6)", textWrap: "pretty" }}>
-              Sim, via API oficial do WhatsApp Business — sem gambiarras que arriscam o número da empresa.
+              Sim, via API oficial do WhatsApp Business, sem gambiarras que arriscam o número da empresa.
             </p>
           </details>
           <details style={{ border: "1px solid rgba(255,255,255,.1)", borderRadius: "16px", background: "linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.006))", padding: "0 28px" }}>
@@ -332,7 +332,7 @@ export default function PageContent() {
           Conte qual atendimento ou tarefa você quer resolver. Mostramos como o agente funcionaria no seu caso, antes de você decidir qualquer coisa.
         </p>
         <div style={{ marginTop: "38px" }}>
-          <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20ver%20como%20um%20agente%20de%20IA%20funcionaria%20no%20meu%20neg%C3%B3cio.%20Meu%20caso%20%C3%A9%3A" style={{ display: "inline-block", background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "17px 36px", borderRadius: "100px" }}>
+          <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20ver%20como%20um%20agente%20de%20IA%20funcionaria%20no%20meu%20neg%C3%B3cio.%20Meu%20caso%20%C3%A9%3A" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "17px 36px", borderRadius: "100px" }}>
             Falar sobre meu caso
           </a>
         </div>

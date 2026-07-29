@@ -14,7 +14,7 @@ export default function PageContent() {
           1. Quem somos
         </h2>
         <p style={{ margin: "0" }}>
-          A Diggia AI ("Diggia", "nós") é uma empresa do grupo 2op Digital, com sede na Rua Araguaia 494, Bairro Colatto, Xanxerê – SC, CEP 89820-000. Esta política descreve como tratamos dados pessoais coletados através do site diggia.com.br, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).
+          A Diggia AI ("Diggia", "nós") é uma empresa do grupo 2op Digital, com sede na Rua Araguaia 494, Bairro Colatto, Xanxerê – SC, CEP 89820-000. Esta política descreve como tratamos dados pessoais coletados através do site diggia.com.br, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018, a LGPD).
         </p>
         <h2 style={{ fontFamily: "Manrope,sans-serif", fontWeight: "400", fontSize: "24px", color: "#fff", margin: "48px 0 14px" }}>
           2. Quais dados coletamos

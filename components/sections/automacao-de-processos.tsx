@@ -15,10 +15,10 @@ export default function PageContent() {
             Automação de processos para empresas que não têm tempo a perder
           </h1>
           <p style={{ fontSize: "16px", lineHeight: "1.7", color: "rgba(255,255,255,.65)", maxWidth: "660px", margin: "24px 0 0", textWrap: "pretty" }}>
-            Planilhas que alguém atualiza à mão. Dados digitados duas vezes em sistemas diferentes. Conferências que consomem horas. A Diggia transforma esses gargalos em fluxos automáticos — e devolve o tempo do seu time para o que gera receita.
+            Planilhas que alguém atualiza à mão. Dados digitados duas vezes em sistemas diferentes. Conferências que consomem horas. A Diggia transforma esses gargalos em fluxos automáticos e devolve o tempo do seu time para o que gera receita.
           </p>
           <div style={{ display: "flex", gap: "16px", marginTop: "38px" }}>
-            <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20automatizar%20processos%20na%20minha%20empresa." style={{ background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "16px 32px", borderRadius: "100px" }}>
+            <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20automatizar%20processos%20na%20minha%20empresa." target="_blank" rel="noopener noreferrer" style={{ background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "16px 32px", borderRadius: "100px" }}>
               Automatizar meu processo
             </a>
           </div>
@@ -308,7 +308,7 @@ export default function PageContent() {
               </span>
             </summary>
             <p style={{ margin: "0", padding: "0 0 24px", fontSize: "15.5px", lineHeight: "1.65", color: "rgba(255,255,255,.6)", textWrap: "pretty" }}>
-              Não. Automatizamos em cima do que você já usa — o objetivo é integrar, não substituir.
+              Não. Automatizamos em cima do que você já usa. O objetivo é integrar, não substituir.
             </p>
           </details>
           <details style={{ border: "1px solid rgba(255,255,255,.1)", borderRadius: "16px", background: "linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.006))", padding: "0 28px" }}>
@@ -330,7 +330,7 @@ export default function PageContent() {
               </span>
             </summary>
             <p style={{ margin: "0", padding: "0 0 24px", fontSize: "15.5px", lineHeight: "1.65", color: "rgba(255,255,255,.6)", textWrap: "pretty" }}>
-              Se existe tarefa repetitiva, existe o que automatizar. Nosso modelo foi desenhado para PMEs — escopo enxuto, custo definido antes.
+              Se existe tarefa repetitiva, existe o que automatizar. Nosso modelo foi desenhado para PMEs: escopo enxuto, custo definido antes.
             </p>
           </details>
           <details style={{ border: "1px solid rgba(255,255,255,.1)", borderRadius: "16px", background: "linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.006))", padding: "0 28px" }}>
@@ -359,13 +359,13 @@ export default function PageContent() {
           Descreva em uma mensagem. A gente responde dizendo se dá para automatizar, como e por onde começar.
         </p>
         <div style={{ marginTop: "38px" }}>
-          <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20avaliar%20a%20automa%C3%A7%C3%A3o%20de%20um%20processo.%20Ele%20funciona%20assim%3A" style={{ display: "inline-block", background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "17px 36px", borderRadius: "100px" }}>
+          <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20avaliar%20a%20automa%C3%A7%C3%A3o%20de%20um%20processo.%20Ele%20funciona%20assim%3A" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "17px 36px", borderRadius: "100px" }}>
             Descrever meu processo no WhatsApp
           </a>
         </div>
         <p style={{ fontSize: "15px", color: "rgba(255,255,255,.65)", margin: "24px 0 0" }}>
           Prefere algo mais estruturado?{' '}
-          <a href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20agendar%20o%20diagn%C3%B3stico%20gratuito%20da%20Diggia." style={{ color: "#8b9bff" }}>
+          <a href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20agendar%20o%20diagn%C3%B3stico%20gratuito%20da%20Diggia." target="_blank" rel="noopener noreferrer" style={{ color: "#8b9bff" }}>
             Peça o diagnóstico gratuito.
           </a>
         </p>

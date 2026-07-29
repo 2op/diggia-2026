@@ -8,6 +8,9 @@ export default function Footer() {
         <p style={{ margin: "16px 0 0", fontSize: "14px", color: "rgba(255,255,255,.55)" }}>
           Think big, start small, grow fast
         </p>
+        {/* Ícones de redes sociais — reativar quando os perfis existirem.
+            São Instagram, Facebook e LinkedIn; envolver cada <span> num <a>
+            com o href do perfil ao reativar.
         <div style={{ display: "flex", gap: "14px", marginTop: "22px" }}>
           <span style={{ width: "36px", height: "36px", border: "1px solid rgba(255,255,255,.18)", borderRadius: "100px", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.65)" strokeWidth="1.6">
@@ -28,6 +31,7 @@ export default function Footer() {
             </svg>
           </span>
         </div>
+        */}
       </div>
       <div>
         <div style={{ fontSize: "12.5px", letterSpacing: ".14em", textTransform: "uppercase", color: "rgba(255,255,255,.45)", marginBottom: "16px" }}>
@@ -78,12 +82,12 @@ export default function Footer() {
         </div>
       </div>
     </div>
-    <div style={{ borderTop: "1px solid rgba(255,255,255,.08)", marginTop: "48px", paddingTop: "24px", display: "flex", justifyContent: "space-between", fontSize: "13.5px", color: "rgba(255,255,255,.5)" }}>
+    <div style={{ borderTop: "1px solid rgba(255,255,255,.08)", marginTop: "48px", paddingTop: "24px", display: "flex", flexWrap: "wrap", gap: "8px 24px", justifyContent: "space-between", fontSize: "13.5px", color: "rgba(255,255,255,.5)" }}>
       <span>
         Uma empresa do grupo{' '}
-        <strong style={{ color: "rgba(255, 255, 255, 0.75)", fontWeight: "500" }}>
+        <a href="https://2op.com.br" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255, 255, 255, 0.75)", fontWeight: "500", textDecoration: "none" }}>
           2op Digital
-        </strong>
+        </a>
         {' '}- 18 anos, +200 clientes
       </span>
       <span>

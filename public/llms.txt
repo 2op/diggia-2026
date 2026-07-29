@@ -1,6 +1,6 @@
 # Diggia AI
 
-> A Diggia implementa automação de processos, agentes de IA e consultoria de IA para pequenas e médias empresas (PMEs) brasileiras. Lema: "Think big, start small, grow fast" — projetos enxutos, primeira entrega em produção em semanas, custo definido antes de começar.
+> A Diggia implementa automação de processos, agentes de IA e consultoria de IA para pequenas e médias empresas (PMEs) brasileiras. Lema: "Think big, start small, grow fast". Projetos enxutos, primeira entrega em produção em semanas, custo definido antes de começar.
 
 A Diggia é uma empresa do grupo 2op Digital (18 anos de mercado, mais de 200 clientes), com sede em Xanxerê - SC, Brasil, e atendimento a todo o país. Contato: WhatsApp (49) 99928-9840, e-mail contato@diggia.com.br.
 

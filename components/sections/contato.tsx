@@ -5,9 +5,33 @@ import { useState } from 'react';
 
 export default function PageContent() {
   const [sent, setSent] = useState(false);
-  const submit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
+    if (sending) return;
+    setError(null);
+    setSending(true);
+
+    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+    try {
+      const res = await fetch('/api/contato', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        setError(body.error || 'Não foi possível enviar. Tente novamente.');
+        return;
+      }
+      setSent(true);
+    } catch {
+      setError('Falha de conexão. Verifique sua internet e tente novamente.');
+    } finally {
+      setSending(false);
+    }
   };
   return (
     <>
@@ -24,10 +48,10 @@ export default function PageContent() {
             Fale com a Diggia
           </h1>
           <p style={{ fontSize: "16px", lineHeight: "1.7", color: "rgba(255,255,255,.65)", maxWidth: "480px", margin: "24px 0 0", textWrap: "pretty" }}>
-            O caminho mais rápido é o WhatsApp — respondemos em horário comercial. Se preferir, use o formulário ou o e-mail.
+            O caminho mais rápido é o WhatsApp. Respondemos em horário comercial. Se preferir, use o formulário ou o e-mail.
           </p>
           <div style={{ marginTop: "34px" }}>
-            <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20contato%20do%20site%20da%20Diggia." style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "16px 32px", borderRadius: "100px" }}>
+            <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20contato%20do%20site%20da%20Diggia." target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "16px 32px", borderRadius: "100px" }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z" />
               </svg>
@@ -87,7 +111,7 @@ export default function PageContent() {
           </div>
         </div>
         {sent && (
-          <div style={{ border: "1px solid rgba(70,95,255,.4)", borderRadius: "24px", background: "linear-gradient(180deg,rgba(70,95,255,.08),rgba(70,95,255,.015))", padding: "var(--px) 48px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: "18px", marginTop: "12px" }}>
+          <div className="dg-card-pad" style={{ border: "1px solid rgba(70,95,255,.4)", borderRadius: "24px", background: "linear-gradient(180deg,rgba(70,95,255,.08),rgba(70,95,255,.015))", padding: "var(--px) 48px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: "18px", marginTop: "12px" }}>
             <span style={{ width: "64px", height: "64px", borderRadius: "100px", border: "1px solid #465fff", background: "rgba(70,95,255,.12)", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8b9bff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20 6L9 17l-5-5" />
@@ -98,7 +122,7 @@ export default function PageContent() {
             </div>
             <p style={{ margin: "0", fontSize: "15.5px", lineHeight: "1.65", color: "rgba(255,255,255,.65)", maxWidth: "380px", textWrap: "pretty" }}>
               Respondemos em até 1 dia útil. Se for urgente,{' '}
-              <a href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20contato%20do%20site%20da%20Diggia." style={{ color: "#8b9bff" }}>
+              <a href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20contato%20do%20site%20da%20Diggia." target="_blank" rel="noopener noreferrer" style={{ color: "#8b9bff" }}>
                 chame no WhatsApp
               </a>
               .
@@ -106,7 +130,15 @@ export default function PageContent() {
           </div>
         )}
         {!sent && (
-          <form onSubmit={submit} style={{ border: "1px solid rgba(255,255,255,.11)", borderRadius: "24px", background: "linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.008))", padding: "44px 48px", display: "flex", flexDirection: "column", gap: "22px", marginTop: "12px" }}>
+          <form onSubmit={submit} className="dg-card-pad" style={{ border: "1px solid rgba(255,255,255,.11)", borderRadius: "24px", background: "linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.008))", padding: "44px 48px", display: "flex", flexDirection: "column", gap: "22px", marginTop: "12px" }}>
+            {/* Honeypot: invisível para humanos, tentador para bots. Fora do
+                fluxo do teclado e do leitor de tela. */}
+            <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}>
+              <label>
+                Não preencha
+                <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+              </label>
+            </div>
             <div className="dg-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "22px" }}>
               <label style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "13.5px", color: "rgba(255,255,255,.7)" }}>
                 Nome{' '}
@@ -129,7 +161,7 @@ export default function PageContent() {
             </div>
             <label style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "13.5px", color: "rgba(255,255,255,.7)" }}>
               Onde sua operação mais trava hoje?{' '}
-              <textarea name="mensagem" rows={4} required placeholder="Conte em poucas linhas — ex.: atendimento demora, planilhas manuais, retrabalho entre sistemas…" style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.14)", borderRadius: "12px", padding: "14px 16px", fontSize: "15px", color: "#fff", fontFamily: "inherit", resize: "vertical" }} />
+              <textarea name="mensagem" rows={4} required placeholder="Conte em poucas linhas. Por exemplo: atendimento demora, planilhas manuais, retrabalho entre sistemas…" style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.14)", borderRadius: "12px", padding: "14px 16px", fontSize: "15px", color: "#fff", fontFamily: "inherit", resize: "vertical" }} />
             </label>
             <label style={{ display: "flex", alignItems: "flex-start", gap: "12px", fontSize: "13.5px", lineHeight: "1.55", color: "rgba(255,255,255,.6)", cursor: "pointer" }}>
               <input type="checkbox" name="lgpd" required style={{ marginTop: "2px", width: "16px", height: "16px", accentColor: "#465fff" }} />
@@ -141,8 +173,13 @@ export default function PageContent() {
                 .
               </span>
             </label>
-            <button className="dg-h4" type="submit" style={{ background: "#465fff", color: "#fff", border: "none", fontSize: "15.5px", fontWeight: "500", fontFamily: "inherit", padding: "16px 32px", borderRadius: "100px", cursor: "pointer", marginTop: "6px" }}>
-              Enviar mensagem
+            {error && (
+              <p role="alert" style={{ margin: "0", fontSize: "14px", lineHeight: "1.5", color: "#ff9b9b", background: "rgba(255,80,80,.08)", border: "1px solid rgba(255,80,80,.25)", borderRadius: "12px", padding: "12px 16px" }}>
+                {error}
+              </p>
+            )}
+            <button className="dg-h4" type="submit" disabled={sending} aria-busy={sending} style={{ background: "#465fff", color: "#fff", border: "none", fontSize: "15.5px", fontWeight: "500", fontFamily: "inherit", padding: "16px 32px", borderRadius: "100px", cursor: sending ? "wait" : "pointer", opacity: sending ? 0.7 : 1, marginTop: "6px" }}>
+              {sending ? "Enviando…" : "Enviar mensagem"}
             </button>
           </form>
         )}

@@ -2,6 +2,16 @@ export const SITE_URL = 'https://www.diggia.com.br';
 export const SITE_NAME = 'Diggia AI';
 export const PHONE = '+55-49-99928-9840';
 export const EMAIL = 'contato@diggia.com.br';
+export const WHATSAPP_NUMBER = '5549999289840';
+
+/** Link do WhatsApp com a mensagem já preenchida. */
+export function whatsappUrl(message: string) {
+	return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+/** Mensagem padrão dos CTAs que não são de uma solução específica. */
+export const WHATSAPP_DEFAULT_MESSAGE =
+	'Olá! Vim do site da Diggia e quero entender como a IA pode ajudar minha empresa.';
 export const ADDRESS = {
 	streetAddress: 'R. Araguaia 494, Colatto',
 	addressLocality: 'Xanxerê',
@@ -23,7 +33,7 @@ export interface PageDef {
 export const PAGES: Record<string, PageDef> = {
 	home: {
 		slug: '',
-		title: 'Diggia AI — Inteligência Artificial para PMEs',
+		title: 'Diggia AI | Inteligência Artificial para PMEs',
 		description:
 			'A Diggia implementa automação e agentes de IA para pequenas e médias empresas brasileiras. Comece pelo processo que mais dói.',
 		h1: 'Transforme sua empresa com Inteligência Artificial',
@@ -43,7 +53,7 @@ export const PAGES: Record<string, PageDef> = {
 		faq: [
 			{
 				question: 'Preciso trocar meus sistemas atuais?',
-				answer: 'Não. Automatizamos em cima do que você já usa — o objetivo é integrar, não substituir.',
+				answer: 'Não. Automatizamos em cima do que você já usa. O objetivo é integrar, não substituir.',
 			},
 			{
 				question: 'Quanto tempo leva?',
@@ -51,7 +61,7 @@ export const PAGES: Record<string, PageDef> = {
 			},
 			{
 				question: 'Minha empresa é pequena demais para isso?',
-				answer: 'Se existe tarefa repetitiva, existe o que automatizar. Nosso modelo foi desenhado para PMEs — escopo enxuto, custo definido antes.',
+				answer: 'Se existe tarefa repetitiva, existe o que automatizar. Nosso modelo foi desenhado para PMEs: escopo enxuto, custo definido antes.',
 			},
 			{
 				question: 'E se o processo mudar depois?',
@@ -74,11 +84,11 @@ export const PAGES: Record<string, PageDef> = {
 		faq: [
 			{
 				question: 'O agente vai falar bobagem para meu cliente?',
-				answer: 'Esse é o risco número um de IA mal implementada — e o motivo de existir nossa etapa de testes supervisionados e limites de atuação. O agente responde só sobre o que foi treinado e transfere o resto para humanos.',
+				answer: 'Esse é o risco número um de IA mal implementada, e o motivo de existir nossa etapa de testes supervisionados e limites de atuação. O agente responde só sobre o que foi treinado e transfere o resto para humanos.',
 			},
 			{
 				question: 'Funciona no WhatsApp?',
-				answer: 'Sim, via API oficial do WhatsApp Business — sem gambiarras que arriscam o número da empresa.',
+				answer: 'Sim, via API oficial do WhatsApp Business, sem gambiarras que arriscam o número da empresa.',
 			},
 			{
 				question: 'Substitui minha equipe de atendimento?',
@@ -95,7 +105,7 @@ export const PAGES: Record<string, PageDef> = {
 		title: 'Consultoria de IA: por onde começar | Diggia AI',
 		description:
 			'Diagnóstico gratuito de 30 minutos e consultoria completa com mapeamento da operação, roadmap de IA e plano de implementação documentado.',
-		h1: 'Consultoria de IA: descubra por onde começar — antes de gastar',
+		h1: 'Consultoria de IA: descubra por onde começar antes de gastar',
 		breadcrumb: 'Consultoria de IA',
 		service: {
 			name: 'Consultoria de IA',
@@ -110,7 +120,7 @@ export const PAGES: Record<string, PageDef> = {
 			},
 			{
 				question: 'Vocês só recomendam ou também implementam?',
-				answer: 'As duas coisas — mas o roadmap é seu. Se preferir implementar com outro parceiro ou time interno, o documento serve do mesmo jeito.',
+				answer: 'As duas coisas, mas o roadmap é seu. Se preferir implementar com outro parceiro ou time interno, o documento serve do mesmo jeito.',
 			},
 			{
 				question: 'Minha empresa precisa ter dados organizados antes?',
@@ -120,9 +130,9 @@ export const PAGES: Record<string, PageDef> = {
 	},
 	sobre: {
 		slug: 'sobre',
-		title: 'Sobre a Diggia AI — quem somos | Diggia AI',
+		title: 'Sobre a Diggia AI: quem somos | Diggia AI',
 		description:
-			'A Diggia nasceu da 2op Digital — 18 anos de mercado e mais de 200 clientes — para levar IA aplicada a pequenas e médias empresas brasileiras.',
+			'A Diggia nasceu da 2op Digital, com 18 anos de mercado e mais de 200 clientes, para levar IA aplicada a pequenas e médias empresas brasileiras.',
 		h1: 'A ponte entre o presente da sua empresa e o que a IA pode fazer por ela',
 		breadcrumb: 'Sobre',
 	},

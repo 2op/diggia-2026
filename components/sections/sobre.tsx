@@ -225,7 +225,7 @@ export default function PageContent() {
           Vamos conversar?
         </h2>
         <div style={{ marginTop: "38px" }}>
-          <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Conheci%20a%20Diggia%20pelo%20site%20e%20quero%20conversar." style={{ display: "inline-block", background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "17px 36px", borderRadius: "100px" }}>
+          <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Conheci%20a%20Diggia%20pelo%20site%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "17px 36px", borderRadius: "100px" }}>
             Falar com a Diggia
           </a>
         </div>

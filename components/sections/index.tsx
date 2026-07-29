@@ -18,10 +18,10 @@ export default function PageContent() {
             A Diggia implementa automação e agentes de IA para pequenas e médias empresas, sem projetos intermináveis, sem jargão, sem custo surpresa.{' '}
           </p>
           <div style={{ display: "flex", gap: "16px", marginTop: "40px" }}>
-            <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Vim%20do%20site%20da%20Diggia%20e%20quero%20entender%20como%20a%20IA%20pode%20ajudar%20minha%20empresa." style={{ background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "16px 32px", borderRadius: "100px" }}>
+            <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Vim%20do%20site%20da%20Diggia%20e%20quero%20entender%20como%20a%20IA%20pode%20ajudar%20minha%20empresa." target="_blank" rel="noopener noreferrer" style={{ background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "16px 32px", borderRadius: "100px" }}>
               Falar com um especialista
             </a>
-            <a className="dg-h2" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20agendar%20o%20diagn%C3%B3stico%20gratuito%20da%20Diggia." style={{ border: "1px solid rgba(255,255,255,.22)", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "16px 32px", borderRadius: "100px", background: "rgba(255,255,255,.03)" }}>
+            <a className="dg-h2" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20agendar%20o%20diagn%C3%B3stico%20gratuito%20da%20Diggia." target="_blank" rel="noopener noreferrer" style={{ border: "1px solid rgba(255,255,255,.22)", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "16px 32px", borderRadius: "100px", background: "rgba(255,255,255,.03)" }}>
               Receber um diagnóstico gratuito
             </a>
           </div>
@@ -328,7 +328,7 @@ export default function PageContent() {
             Conte para a gente onde sua operação trava. Em uma conversa de 30 minutos, mostramos por onde começar - e se fizer sentido, o primeiro passo do projeto.
           </p>
           <div style={{ marginTop: "36px" }}>
-            <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20agendar%20uma%20conversa%20de%20diagn%C3%B3stico%20com%20a%20Diggia." style={{ display: "inline-block", background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "17px 36px", borderRadius: "100px" }}>
+            <a className="dg-h1" href="https://wa.me/5549999289840?text=Ol%C3%A1!%20Quero%20agendar%20uma%20conversa%20de%20diagn%C3%B3stico%20com%20a%20Diggia." target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", background: "#465fff", color: "#fff", textDecoration: "none", fontSize: "15.5px", fontWeight: "500", padding: "17px 36px", borderRadius: "100px" }}>
               Chamar no WhatsApp
             </a>
           </div>

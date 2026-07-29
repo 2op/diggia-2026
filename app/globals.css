@@ -88,14 +88,150 @@ input:focus, textarea:focus { outline: none; border-color: #465fff !important; }
 }
 .dg-header--hidden { transform: translateY(-100%); }
 
+/* ---- Menu mobile ---- */
+.dg-burger {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 100px;
+  background: rgba(255,255,255,.03);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.dg-burger:hover { border-color: rgba(255,255,255,.45); background: rgba(255,255,255,.08); }
+.dg-burger-icon { display: block; width: 18px; height: 12px; position: relative; }
+.dg-burger-icon span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  border-radius: 2px;
+  background: #fff;
+  transition: transform .25s ease, top .25s ease;
+}
+.dg-burger-icon span:first-child { top: 1px; }
+.dg-burger-icon span:last-child { top: 9px; }
+.dg-burger-icon.is-open span:first-child { top: 5px; transform: rotate(45deg); }
+.dg-burger-icon.is-open span:last-child { top: 5px; transform: rotate(-45deg); }
+
+.dg-mobile-nav {
+  display: none;
+  flex-direction: column;
+  padding: 8px var(--px) 28px;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+.dg-mobile-nav.is-open { display: flex; }
+.dg-mobile-link {
+  padding: 16px 0;
+  font-size: 17px;
+  color: rgba(255,255,255,.8);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.dg-mobile-link:last-child { border-bottom: 0; }
+.dg-mobile-link:hover, .dg-mobile-link:focus-visible { color: #fff; }
+
+/* ---- Botão flutuante do WhatsApp ---- */
+.dg-fab {
+  position: fixed;
+  right: 24px;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  z-index: 60; /* acima do header (50) */
+  width: 56px;
+  height: 56px;
+  border-radius: 100px;
+  background: #25d366; /* verde do WhatsApp — é o que torna o botão reconhecível */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px -6px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.08);
+  transition: background-color .22s ease, transform .22s ease, box-shadow .22s ease;
+  animation: dg-fab-in .45s cubic-bezier(.22,.61,.36,1) .5s both;
+}
+.dg-fab svg { width: 30px; height: 30px; display: block; }
+.dg-fab:hover, .dg-fab:focus-visible {
+  background: #1fb457;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px -8px rgba(37,211,102,.55), 0 0 0 1px rgba(255,255,255,.14);
+}
+.dg-fab:active { transform: translateY(-1px); }
+@keyframes dg-fab-in {
+  from { opacity: 0; transform: scale(.7) translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dg-fab { animation: none; }
+}
+/* O botão ocupa o canto inferior direito da viewport de forma permanente, e no
+   fim da rolagem esse canto é o fim do rodapé. Reserva a altura dele (24 + 56)
+   para o texto final não ficar por baixo. */
+footer { padding-bottom: 48px; }
+
 /* ---- Responsivo ---- */
+/* Os títulos têm font-size inline (vindo do HTML original), por isso os ajustes
+   responsivos precisam mirar o valor original — um `h2` genérico aumentaria os
+   subtítulos de 24px da política de privacidade em vez de reduzi-los. */
 @media (max-width: 1100px) {
   :root { --px: 32px; }
   .dg-grid { grid-template-columns: 1fr !important; }
   h1 { font-size: 44px !important; }
+  h1[style*="font-size:42px"],
+  h1[style*="font-size: 42px"] { font-size: 38px !important; }
+  h2[style*="font-size:45px"],
+  h2[style*="font-size: 45px"],
+  h2[style*="font-size:48px"],
+  h2[style*="font-size: 48px"],
+  h2[style*="font-size:50px"],
+  h2[style*="font-size: 50px"] { font-size: 36px !important; }
+}
+@media (max-width: 980px) {
+  .dg-nav-links { display: none !important; }
+  .dg-burger { display: inline-flex; }
+  /* Links do rodapé têm só 18px de altura — área de toque pequena demais. */
+  footer .dg-h5 { padding: 10px 0; }
 }
 @media (max-width: 640px) {
   :root { --px: 20px; }
   h1 { font-size: 34px !important; }
-  .dg-nav-links { display: none !important; }
+  h1[style*="font-size:42px"],
+  h1[style*="font-size: 42px"] { font-size: 30px !important; }
+  h2[style*="font-size:45px"],
+  h2[style*="font-size: 45px"],
+  h2[style*="font-size:48px"],
+  h2[style*="font-size: 48px"],
+  h2[style*="font-size:50px"],
+  h2[style*="font-size: 50px"] { font-size: 29px !important; }
+  h2[style*="font-size:24px"],
+  h2[style*="font-size: 24px"] { font-size: 21px !important; }
+  .dg-header-cta { font-size: 13.5px !important; padding: 10px 16px !important; }
+
+  /* Botões lado a lado não cabem em 375px — viram pílulas de 3 linhas.
+     Empilha a linha de CTAs e deixa cada botão ocupar a largura toda. */
+  main div:has(> .dg-h1),
+  main div:has(> .dg-h2) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  main .dg-h1,
+  main .dg-h2 {
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* 48px de padding lateral deixa os campos com ~240px de largura útil. */
+  .dg-card-pad { padding: 30px 22px !important; }
+
+  .dg-fab {
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    width: 52px;
+    height: 52px;
+  }
+  .dg-fab svg { width: 28px; height: 28px; }
 }
